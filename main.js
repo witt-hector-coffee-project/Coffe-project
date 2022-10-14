@@ -2,7 +2,7 @@
 
 function renderCoffee(coffee) {
     var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
+    // html += '<td>' + coffee.id + '</td>';
     html += '<td>' + coffee.name + '</td>';
     html += '<td>' + coffee.roast + '</td>';
     html += '</tr>';
@@ -49,11 +49,14 @@ var coffees = [
 ];
 
 var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
+var submitButton = document.querySelector('#brew-submit');
+var roastSelection = document.querySelector('#brew-type');
 
 // add .reverse to coffees on line 55 to fix array order
 
 tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
+
+//attempting to remove table ID here
+document.getElementById("dontLook").style.display = "none";
