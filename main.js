@@ -1,11 +1,24 @@
 "use strict"
 
-function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    // html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+// function renderCoffee(coffee) {
+//     var html = '<tr class="coffee">';
+//     // html += '<td>' + coffee.id + '</td>';
+//     html += '<td>' + coffee.name + '</td>';
+//     html += '<td>' + coffee.roast + '</td>';
+//     html += '</tr>';
+//
+//     return html;
+// }
+
+//changed function to use divs instead of tables
+
+function renderCoffee(coffee){
+    let html = '<div class=coffee">';
+    //commenting out to hide display id
+    // html += '<div>' + coffee.id + '</div>';
+    html += '<h3>' + coffee.name + '</h3>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -58,5 +71,3 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
 
-//attempting to remove table ID here
-document.getElementById("dontLook").style.display = "none";
