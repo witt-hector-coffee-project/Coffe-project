@@ -71,3 +71,17 @@ tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
 
+
+//testing functions
+function NameHere (){
+    let search = document.getElementById("name-coffee").value
+
+    for(let i = 0; i < coffees.length; i++ ){
+        if (coffees[i] === search){
+            return coffees
+        }else{
+
+        }
+
+    }
+}
