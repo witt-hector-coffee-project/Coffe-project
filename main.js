@@ -73,15 +73,31 @@ submitButton.addEventListener('click', updateCoffees);
 
 
 //testing functions
-function NameHere (){
-    let search = document.getElementById("name-coffee").value
-
-    for(let i = 0; i < coffees.length; i++ ){
-        if (coffees[i] === search){
-            return coffees
-        }else{
-
+// function NameHere (){
+//     let search = document.getElementById("name-coffee").value
+//
+//     for(let i = 0; i < coffees.length; i++ ){
+//         if (coffees[i] === search){
+//             return coffees
+//         }else{
+//
+//         }
+//
+//     }
+// }
+// Adds the the search ability by coffee type to the page
+function CoffeeInput (){
+    let input = document.getElementById("name-coffee").value
+    //the .toUpperCase() makes it so the input can be case-insensitive
+    input=input.toUpperCase();
+    // returns the search options in an array matching the input
+    let filteredCoffees = [];
+    coffees.forEach(function (coffee){
+        if (coffee.name.toUpperCase().includes(input)){
+            filteredCoffees.push(coffee);
         }
-
-    }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+let searchBar =document.querySelector('#name-coffee');
+searchBar.addEventListener('keyup', CoffeeInput);
