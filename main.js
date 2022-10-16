@@ -38,9 +38,14 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (roastSelection.value === "All") {
+            filteredCoffees.push(coffee);
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    //added revers to get the
+    let x = document.getElementById("coffees");
+    x.style.display = "block";
+    tbody.innerHTML = renderCoffees(filteredCoffees.reverse());
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -67,7 +72,8 @@ var roastSelection = document.querySelector('#brew-type');
 
 // add .reverse to coffees on line 55 to fix array order
 
-tbody.innerHTML = renderCoffees(coffees.reverse());
+//now the coffees won't load on page start until you select them
+// tbody.innerHTML = renderCoffees(coffees.reverse());
 
 submitButton.addEventListener('click', updateCoffees);
 
