@@ -62,13 +62,14 @@ body {
 }
 
 /*The contents of the nav bar positioning, keeps the list on the orange background*/
-.nav-bar {
+#nav-bar {
     margin-top:10px;
     position:fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1;
+    transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 /*setting better alignments to the nav positioning making it more towards center*/
 .nav-container {
