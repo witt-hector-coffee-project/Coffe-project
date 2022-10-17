@@ -107,3 +107,19 @@ function CoffeeInput (){
 }
 let searchBar =document.querySelector('#name-coffee');
 searchBar.addEventListener('keyup', CoffeeInput);
+//CODE TO STORE NEW COFFEE DATA
+let coffeeAdd = document.querySelector('#name-coffee2');
+let roastAdd = document.querySelector('#brew-type2');
+let userSubmit = document.querySelector('#brew-submit2');
+
+function addToCoffees(e) {
+    e.preventDefault();
+    let newCoffee = [];
+    newCoffee.id = coffees.length+1;
+    newCoffee.name = coffeeAdd.value;
+    newCoffee.roast = roastAdd.value;
+    coffees.push(newCoffee);
+    tbody.innerHTML = renderCoffees(coffees)
+}
+
+userSubmit.addEventListener('click', addToCoffees);
