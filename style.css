@@ -1,13 +1,15 @@
 /*Changes the background color*/
 
 html,
-    /*adding a scroll behavior to the page as well as coloring and sizing*/
+    /*coloring and sizing*/
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     background-color: black !important;
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 /*The sizing of the orange box made it SUPA BIG*/
 .eight-content {
@@ -21,7 +23,7 @@ body {
     height: 100%;
     margin: auto;
     background-size: cover;
-    background-color: orangered;
+    background-image: url("https://media.giphy.com/media/MaThe6p8WAKbf9NDDM/giphy.gif");
     position: relative;
     top: 0;
     bottom: 0;
@@ -39,17 +41,28 @@ body {
 /*The styling of the text and adding an outer glow*/
 .eight-content01_inner h1 {
     font-family: "Press Start 2P";
-    color: yellowgreen;
+    color: #b1ef39;
     font-size: 100px;
     text-shadow: 0 0 300px #dfff11;
-    animation: ease-in;
 }
 .eight-content01_inner h4 {
     font-family: "Press Start 2P";
-    color: #e2ee45;
-    font-size: 60px;
-    text-shadow: 0 0 300px #dfff11;
+    color: #b1ef39;
+    font-size: 100px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+            typing 3.5s steps(40, end);
 }
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
 /*The contents of the nav bar positioning, keeps the list on the orange background*/
 .nav-bar {
     margin-top:10px;
@@ -89,27 +102,29 @@ nav ul li a:visited {
     font-family: "Press Start 2P";
     font-size: 12px;
 }
+/*END OF NAV STUFFS*/
+
+/*START OF PARAGRAPH AND CARDS CONTENT*/
+div{
+    font-family: "Press Start 2P";
+}
 p{
     margin: auto;
     font-family: "Press Start 2P";
-    color: thistle;
+    color: #dea1de;
+    animation-timing-function: ease-in;
+}
+.card{
+    background-color: cornflowerblue;
 }
 
-/*/Adjustment and sizing in the forms*!*/
-#coffees{
-    width: 100%;
-    text-align: center;
-    font-family: "Press Start 2P";
-    font-size: 8px;
-    color: aqua;
-}
-h1{
-    font-family: "Press Start 2P";
-    color: darkmagenta;
-}
 h2{
     font-family: "Press Start 2P";
-    color: darkmagenta;
+    color: rgba(248, 46, 253, 0.73);
+}
+h3{
+    font-family: "Press Start 2P";
+    color: rgb(222, 82, 179);
 }
 #brew-type{
     color: orangered;
@@ -163,7 +178,7 @@ option{
     height: 40px;
 }
 /*THIS WAS TRYING TO GET THR ROAST OPTIONS DROP DOWN TO MATCH BUT COULDNT GET IT*/
-#brew-type3{
+#roast-selection{
     color: orangered;
     background-color: lightskyblue;
     width: 100%;
