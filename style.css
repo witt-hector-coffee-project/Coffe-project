@@ -8,8 +8,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: black !important;
-    overflow: auto;
-    scroll-behavior: smooth;
 }
 /*The sizing of the orange box made it SUPA BIG*/
 .eight-content {
